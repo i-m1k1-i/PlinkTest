@@ -11,6 +11,8 @@ public class MiniMonsterBehaviour : MonoBehaviour
     [SerializeField] private float _speed;
     private List<Vector3> _path = new List<Vector3>();
 
+    private bool _stop;
+
     public GameObject particleProjectile;
 
     private void OnDrawGizmosSelected()
@@ -34,11 +36,15 @@ public class MiniMonsterBehaviour : MonoBehaviour
     private void OnEnable()
     {
         Bonus.OnUltimateBonusRelease += Death;
+        FreezeAbility.OnFreeze += Stop;
+        FreezeAbility.OnFreezeEnd += Resume;
     }
 
     private void OnDisable()
     {
         Bonus.OnUltimateBonusRelease -= Death;
+        FreezeAbility.OnFreeze -= Stop;
+        FreezeAbility.OnFreezeEnd -= Resume;
     }
 
     public void StartMove()
@@ -87,6 +93,10 @@ public class MiniMonsterBehaviour : MonoBehaviour
         {
             while (transform.position != point)
             {
+                if (_stop)
+                {
+                    yield return new WaitWhile(() => _stop);
+                }
                 if (!PauseManager.Paused)
                 {
                     transform.position = Vector3.MoveTowards(transform.position, point, _speed * Time.deltaTime);
@@ -108,5 +118,15 @@ public class MiniMonsterBehaviour : MonoBehaviour
         Instantiate(particleProjectile, transform.position, Quaternion.identity);
         transform.DOKill();
         Destroy(gameObject);
+    }
+
+    private void Stop()
+    {
+        _stop = true;
+    }
+
+    private void Resume()
+    {
+        _stop = false;
     }
 }

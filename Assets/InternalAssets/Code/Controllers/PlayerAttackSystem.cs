@@ -11,6 +11,11 @@ public class PlayerAttackSystem : MonoBehaviour
 
     private ObjectPool<Projectile> _projectilePool;
 
+    public Projectile GetProjectile()
+    {
+        return _projectilePool.Get();
+    }
+
     private void Start()
     {
         _projectilePool = new ObjectPool<Projectile>(CreateProjectile, OnTakeFromPool, OnReturnToPool, OnDestroyObject, false, 200, 200);

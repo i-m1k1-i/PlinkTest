@@ -8,20 +8,26 @@ public class GameplayBoot : MonoBehaviour
     public AudioSource musicSource;
     public AudioClip[] musicClips;
 
-    [Space(30f)]
-
-    public GameObject[] BossPrefabs;
+    [Space(15f)]
 
     public Image BGImage;
     public Sprite[] BGSprites;
+
+    [Space(15f)]
+
+    public GameObject[] BossPrefabs;
     public Transform bossRoot;
 
+    [Space(15f)]
+
+    [SerializeField] private Ability[] _abilityPrefabs;
+    [SerializeField] private PlayerAbilitySystem _abilitySystem;
+
     public static int BGToLoad = 0;
-
-
     public static int BossToLoad = 0;
     public static int LevelID = 1;
     public static int MusicToLoad = 0;
+    public static int AbilityToLoad = 0;
 
     private void Start()
     {
@@ -29,6 +35,9 @@ public class GameplayBoot : MonoBehaviour
         Instantiate(BossPrefabs[BossToLoad], bossRoot.transform.position, Quaternion.identity);
         musicSource.clip = musicClips[MusicToLoad];
         musicSource.Play();
+
+        Ability ability = Instantiate(_abilityPrefabs[AbilityToLoad], Vector3.zero, Quaternion.identity);
+        _abilitySystem.SetAbility(ability);
     }
 
     public void OpenLevel()

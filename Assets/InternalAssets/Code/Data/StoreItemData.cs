@@ -26,5 +26,6 @@ public struct StoreItemData
 public enum ItemType
 {
     Background,
-    Music
+    Music,
+    Ability
 }

@@ -1,7 +1,67 @@
 fileFormatVersion: 2
-guid: 5f53296e4737c734f99932d63d86c11c
+guid: a1f406e04c19130498c169ccd76ea10f
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 5700486394473602221
+    second: Bombardment_0
+  - first:
+      213: 237261015034221177
+    second: Bombardment_1
+  - first:
+      213: 7882904308701670129
+    second: Bombardment_2
+  - first:
+      213: -6390727618193000248
+    second: Bombardment_3
+  - first:
+      213: 3908178437742782695
+    second: Bombardment_4
+  - first:
+      213: 1754475774977241151
+    second: Bombardment_5
+  - first:
+      213: -6096288710483630965
+    second: Bombardment_6
+  - first:
+      213: 6748291345561365910
+    second: Bombardment_7
+  - first:
+      213: -3605598969823252880
+    second: Bombardment_8
+  - first:
+      213: 5858849640622474524
+    second: Bombardment_9
+  - first:
+      213: -1930152486563659582
+    second: Bombardment_10
+  - first:
+      213: 1951856709153766464
+    second: Bombardment_11
+  - first:
+      213: 3264569889481420326
+    second: Bombardment_12
+  - first:
+      213: -7291964913976745963
+    second: Bombardment_13
+  - first:
+      213: -2886212902637454459
+    second: Bombardment_14
+  - first:
+      213: -6571704098024256069
+    second: Bombardment_15
+  - first:
+      213: 6272174082743507264
+    second: Bombardment_16
+  - first:
+      213: 6889469411917103642
+    second: Bombardment_17
+  - first:
+      213: -7314228824329182695
+    second: Bombardment_18
+  - first:
+      213: -1095736086704769751
+    second: Bombardment_19
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +109,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 110, y: 110, z: 110, w: 110}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -69,20 +129,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -107,33 +154,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -147,13 +168,35 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Bombardment_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 380
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 888def94b3938c44fb796b4e6f048b56
+      internalID: 1204684574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: ec7c265cef3eb9e428e0eac396732129
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -161,7 +204,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bombardment_0: 1204684574
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
