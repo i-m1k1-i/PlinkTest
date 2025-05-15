@@ -14,6 +14,9 @@ public class BossController : MonoBehaviour
     [SerializeField] private int _health;
     [SerializeField] private GameObject[] _spawnUnints;
     [SerializeField] private AudioSource _audioSource;
+
+    private bool _stopSpawn = false;
+
     public int Health
     {
         get { return _health; }
@@ -24,9 +27,21 @@ public class BossController : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        FreezeAbility.OnFreeze += StopSpawn;
+        FreezeAbility.OnFreezeEnd += ResumeSpawn;
+    }
+
+    private void OnDisable()
+    {
+        FreezeAbility.OnFreeze -= StopSpawn;
+        FreezeAbility.OnFreezeEnd -= ResumeSpawn;
+    }
+
     private void Start()
     {
-        StartCoroutine(spawnUnitsCoroutine());
+        StartCoroutine(SpawnUnitsCoroutine());
         OnBossSpawned?.Invoke(Health);
     }
 
@@ -43,7 +58,7 @@ public class BossController : MonoBehaviour
         transform.DOShakeScale(0.2f, 0.1f).onComplete = () => { transform.localScale = Vector3.one; };
     }
 
-    private IEnumerator spawnUnitsCoroutine()
+    private IEnumerator SpawnUnitsCoroutine()
     {
         while (true)
         {
@@ -63,6 +78,10 @@ public class BossController : MonoBehaviour
                         }
                     }
                 }
+                if (_stopSpawn)
+                {
+                    yield return new WaitWhile(() => _stopSpawn);
+                }
                 Instantiate(_spawnUnints[UnityEngine.Random.Range(0, _spawnUnints.Length)], transform.position, Quaternion.identity);
             }
             else
@@ -70,5 +89,15 @@ public class BossController : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
         }
+    }
+
+    private void StopSpawn()
+    {
+        _stopSpawn = true;
+    }
+
+    private void ResumeSpawn()
+    {
+        _stopSpawn = false;
     }
 }

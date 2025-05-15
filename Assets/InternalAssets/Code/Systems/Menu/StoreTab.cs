@@ -120,9 +120,13 @@ public class StoreTab : MonoBehaviour
         {
             GameplayBoot.BGToLoad = data.ItemGameID;
         }
-        else
+        else if (data.Type == ItemType.Music)
         {
             GameplayBoot.MusicToLoad = data.ItemGameID;
+        }
+        else
+        {
+            GameplayBoot.AbilityToLoad = data.ItemGameID;
         }
 
         UpdateView();
